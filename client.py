@@ -92,6 +92,7 @@ def main():
 
 
 def loginScreen():
+	clearView()
 	root.geometry("500x500")
 	root.title("Identity Chain Client v1.0")
 	root.minsize(1000,800)
@@ -109,7 +110,8 @@ def loginScreen():
 
 	pword = tk.Entry(root, show="*", textvariable = password)
 	pword.pack()
-
+	uname.delete(0, END)
+	pword.delete(0, END)
 	loginButton = tk.Button(root, text="Login", command=login)
 	loginButton.pack()
 
@@ -125,6 +127,8 @@ def dashboard():
 	createAnElectionButton = tk.Button(root, text="Go to Election Dashboard", command=election_dashboard)
 	voteScreenButton.pack()
 	createAnElectionButton.pack()
+
+	tk.Button(root, text="Log Out", command=loginScreen).pack()
 
 def vote_dashboard():
 	clearView()

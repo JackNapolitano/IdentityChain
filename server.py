@@ -113,20 +113,21 @@ def vote_result():
     if name:
       if name in response:  
         election=response[name]
-        html = """<HTML>
-        <head>
-  <title>Election Result</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-</head>
-<BODY>
-<div class="container">
-  <h2 class="text-center">Election Result</h2>
-        <TABLE class="table table-striped"><THEAD><TR><TH>Candidate</TH><TH>Total</TH></TR></THEAD><TBODY>"""
+        html = """
+            <HTML>
+            <head>
+            <title>Election Result</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+            </head>
+            <BODY>
+            <div class="container">
+            <h2 class="text-center">Election Result</h2>
+            <TABLE class="table table-striped"><THEAD><TR><TH>Candidate</TH><TH>Total</TH></TR></THEAD><TBODY>"""
         for k, v  in election.items():
           print (k,v)
           html += "<TR><TD>{}</TD><TD>{}</TD></TR>".format(k,v["score"])
